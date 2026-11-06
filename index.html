@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Boutique Pro Sénégal</title>
+<meta name="description" content="Gestion de boutique d'alimentation générale : ventes, stock, crédits, caisse. Fonctionne sans Internet.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self' https://*.supabase.co wss://*.supabase.co; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta name="theme-color" content="#0f766e">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png">
+<link rel="apple-touch-icon" href="assets/icons/icon-152.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Boutique Pro">
+<link rel="stylesheet" href="assets/styles/app.css">
+</head>
+<body>
+<div id="splash" class="splash"><img src="assets/icons/icon-192.png" alt="" width="96" height="96"><p>Boutique Pro Sénégal</p></div>
+<div id="app" hidden>
+  <header class="topbar">
+    <button class="icon-btn" id="btn-menu" aria-label="Menu">☰</button>
+    <h1 id="titre-page">Boutique Pro</h1>
+    <button class="sync" id="indicateur-sync" aria-live="polite" title="État de la synchronisation"><span class="dot"></span><span id="txt-sync">Local</span></button>
+    <button class="icon-btn" id="btn-install" hidden>Installer</button>
+  </header>
+  <nav id="nav" class="nav" aria-label="Navigation principale"></nav>
+  <main id="vue" tabindex="-1"></main>
+</div>
+<div id="modal-racine"></div>
+<div id="toasts" aria-live="polite"></div>
+<script src="vendor/supabase.js"></script>
+<script type="module" src="src/app.js"></script>
+</body>
+</html>
