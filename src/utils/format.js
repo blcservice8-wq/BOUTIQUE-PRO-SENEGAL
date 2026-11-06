@@ -1,0 +1,12 @@
+const nf = new Intl.NumberFormat('fr-FR', { maximumFractionDigits: 0 });
+const nq = new Intl.NumberFormat('fr-FR', { maximumFractionDigits: 3 });
+export const fcfa = n => `${nf.format(Math.round(Number(n) || 0)).replace(/[  ]/g, ' ')} FCFA`;
+export const nombre = n => nf.format(Math.round(Number(n) || 0)).replace(/[  ]/g, ' ');
+export const qte = n => nq.format(Number(n) || 0).replace(/[  ]/g, ' ');
+export const dateFR = iso => iso ? new Date(iso).toLocaleDateString('fr-FR') : '—';
+export const heureFR = iso => iso ? new Date(iso).toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' }) : '';
+export const dateHeureFR = iso => iso ? `${dateFR(iso)} ${heureFR(iso)}` : '—';
+export const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+export const LIBELLE_MODE = { especes: 'Espèces', wave: 'Wave', orange_money: 'Orange Money', autre_mobile: 'Autre mobile', credit: 'Crédit' };
+export const LIBELLE_UNITE = { unite: 'unité', kg: 'kg', litre: 'litre', paquet: 'paquet', carton: 'carton', sac: 'sac' };
+export const UNITES_DECIMALES = new Set(['kg', 'litre']);
